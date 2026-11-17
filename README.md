@@ -21,6 +21,6 @@ testo da pronunciare, l'emozione e il gesto; Unity li trasforma in voce e animaz
 
 ## Requisiti
 
-- **Harness**: .NET 8 SDK, chiave API Anthropic
+- **Harness**: .NET 8 SDK, chiave GEMINI
 - **Unity**: versione da definire (team AR/VR)
 - **Git LFS** per gli asset 3D, le texture e l'audio (`git lfs install` una volta sola)
