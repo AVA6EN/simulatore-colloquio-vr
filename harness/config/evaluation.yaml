@@ -1,0 +1,58 @@
+# Griglia di valutazione del feedback finale.
+# Il modello assegna un punteggio 1-5 a ogni criterio con motivazione ed evidenze.
+# Il voto complessivo lo calcola la harness (media pesata), non il modello,
+# così è sempre coerente con i punteggi dei singoli criteri.
+# I pesi devono sommare a 1.0 (verificato da un test).
+
+scale:
+  1: Insufficiente
+  2: Da migliorare
+  3: Sufficiente
+  4: Buono
+  5: Ottimo
+
+criteria:
+  - id: comunicazione
+    name: Comunicazione
+    weight: 0.20
+    description: Chiarezza, ordine e sinteticità delle risposte; linguaggio appropriato.
+    levels:
+      1: Risposte confuse, frammentate o fuori tema.
+      3: Risposte comprensibili ma poco strutturate o prolisse.
+      5: Risposte chiare, ben strutturate e della giusta lunghezza.
+
+  - id: motivazione
+    name: Motivazione e interesse per il ruolo
+    weight: 0.20
+    description: Sa spiegare perché vuole questo ruolo e cosa può dare all'azienda.
+    levels:
+      1: Nessuna motivazione specifica, risposte generiche.
+      3: Motivazione presente ma poco collegata al ruolo.
+      5: Motivazione convincente e collegata alla posizione e al proprio percorso.
+
+  - id: competenze
+    name: Competenze tecniche
+    weight: 0.25
+    description: Padronanza delle competenze richieste dalla posizione.
+    levels:
+      1: Non dimostra le competenze richieste.
+      3: Conoscenze di base, poca profondità.
+      5: Dimostra competenze solide con esempi e terminologia corretta.
+
+  - id: esempi_concreti
+    name: Esempi concreti
+    weight: 0.20
+    description: Supporta le affermazioni con esperienze reali (situazione, azione, risultato).
+    levels:
+      1: Nessun esempio, solo affermazioni.
+      3: Qualche esempio ma incompleto (manca l'azione personale o il risultato).
+      5: Esempi completi, con il proprio ruolo e il risultato ottenuto.
+
+  - id: gestione_domande_difficili
+    name: Gestione delle domande difficili
+    weight: 0.15
+    description: Come reagisce agli approfondimenti e alle domande a cui non sa rispondere.
+    levels:
+      1: Si blocca, evita la domanda o inventa.
+      3: Risponde ma in modo difensivo o incompleto.
+      5: Resta calmo, ammette i limiti con onestà e propone come colmarli.

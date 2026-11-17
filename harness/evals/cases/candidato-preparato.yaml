@@ -1,0 +1,31 @@
+id: candidato-preparato
+description: >
+  Candidato preparato e motivato. Il recruiter deve condurre tutte le fasi,
+  fare domande legate al CV e dare un voto alto con evidenze.
+
+setup:
+  student: studente-esempio
+  position: junior-developer
+  recruiter: it-tech-lead
+  difficulty: medio
+
+candidate:
+  mode: simulated
+  persona: |
+    Sei Luca, 21 anni, studente ITS Web e Mobile Developer (il CV è quello del colloquio).
+    Sei preparato, educato e motivato. Rispondi con esempi concreti dai tuoi progetti
+    (app delle aule studio in React Native con Firebase, stage in web agency con React e Node.js),
+    spieghi cosa hai fatto tu personalmente e com'è andata. Conosci bene React e Git.
+    Se non sai qualcosa lo ammetti e dici come lo impareresti. Alla fine fai una domanda sul mentor.
+
+max_turns: 22
+
+expect:
+  completes: true
+  all_phases: true
+  max_fallbacks: 0
+  recruiter_mentions_any: [React, aule, stage, Firebase, Node]
+  overall_score: { min: 3.5 }
+  criteria:
+    competenze: { min: 3 }
+    esempi_concreti: { min: 3 }

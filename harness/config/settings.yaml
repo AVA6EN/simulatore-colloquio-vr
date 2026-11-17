@@ -1,0 +1,21 @@
+# Impostazioni generali della harness.
+# Per override locali (es. modello diverso per prove) crea settings.local.yaml
+# nella stessa cartella: è escluso da git.
+
+model: claude-opus-5-5
+
+# Sforzo di ragionamento (low | medium | high | xhigh | max).
+# Battute del recruiter: "low" per tenere bassa la latenza durante il dialogo.
+# Feedback finale: più alto, perché deve essere accurato e motivato.
+turn_effort: low
+feedback_effort: high
+
+turn_max_tokens: 2000
+feedback_max_tokens: 8000
+
+# Quante volte la harness richiede una nuova battuta se l'output viola le regole
+# (vedi guardrails.yaml) prima di usare la battuta di riserva.
+max_guard_retries: 2
+
+# Lingua del colloquio
+language: it

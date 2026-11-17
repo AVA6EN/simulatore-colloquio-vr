@@ -1,0 +1,55 @@
+# Regole e controlli automatici sull'output del recruiter.
+# Se una battuta viola una regola, la harness la richiede al modello spiegando
+# l'errore (fino a max_guard_retries volte, vedi settings.yaml); se continua a
+# fallire usa la battuta di riserva della fase.
+
+max_speech_words: 60
+max_questions_per_turn: 1
+
+# Battuta di riserva, usata se il modello non produce una battuta valida.
+fallback_speech: "Scusami, puoi dirmi qualcosa in più su quello che hai appena detto?"
+
+# Frasi che indicano che il modello è uscito dal ruolo di recruiter.
+role_break_phrases:
+  - "come intelligenza artificiale"
+  - "sono un'intelligenza artificiale"
+  - "sono un modello"
+  - "modello linguistico"
+  - "sono claude"
+  - "anthropic"
+  - "come assistente"
+  - "non posso fingere"
+  - "system prompt"
+
+# Domande vietate in un colloquio di lavoro in Italia (discriminatorie:
+# D.Lgs. 198/2006, D.Lgs. 216/2003, art. 8 Statuto dei lavoratori).
+# Il recruiter non deve mai fare domande su questi temi.
+forbidden_topics:
+  - id: stato_civile_figli
+    patterns: ["sei sposat", "hai figli", "vuoi figli", "pensi di avere figli", "fidanzat", "gravidanz", "incinta"]
+  - id: religione
+    patterns: ["religion", "sei credente", "vai in chiesa", "pratichi una fede"]
+  - id: politica_sindacato
+    patterns: ["per chi voti", "quale partito", "iscritto a un sindacato", "iscritta a un sindacato", "orientamento politico"]
+  - id: salute
+    patterns: ["malattie", "sei malat", "disabilit", "problemi di salute"]
+  - id: orientamento_origine
+    patterns: ["orientamento sessuale", "di che etnia", "da dove vengono i tuoi", "sei italian"]
+  - id: eta
+    patterns: ["quanti anni hai", "che età hai", "in che anno sei nat"]
+
+# Dati personali da oscurare PRIMA di inviare CV e risposte al modello.
+# I pattern sono espressioni regolari .NET.
+pii_redaction:
+  - id: email
+    pattern: "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    replacement: "[EMAIL]"
+  - id: telefono
+    pattern: "(?<!\\d)(?:\\+39[\\s.-]?)?3\\d{2}[\\s.-]?\\d{3}[\\s.-]?\\d{3,4}(?!\\d)"
+    replacement: "[TELEFONO]"
+  - id: codice_fiscale
+    pattern: "\\b[A-Za-z]{6}\\d{2}[A-Za-z]\\d{2}[A-Za-z]\\d{3}[A-Za-z]\\b"
+    replacement: "[CODICE_FISCALE]"
+  - id: iban
+    pattern: "\\bIT\\d{2}[A-Z]\\d{10}[0-9A-Z]{12}\\b"
+    replacement: "[IBAN]"

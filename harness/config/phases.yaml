@@ -1,0 +1,49 @@
+# Fasi del colloquio, nell'ordine in cui vengono svolte.
+#
+# La harness (non il modello) decide quando passare alla fase successiva:
+#   - si avanza se il modello segnala phase_goal_met E sono state fatte almeno min_questions domande
+#   - si avanza comunque quando si raggiunge max_questions
+# I valori sono moltiplicati per il fattore "question_multiplier" del livello di difficoltà.
+#
+# prompt: file in harness/prompts/phases/ con le istruzioni specifiche della fase.
+
+phases:
+  - id: accoglienza
+    name: Accoglienza
+    goal: Mettere a proprio agio il candidato, presentarsi e chiedergli una breve presentazione di sé.
+    min_questions: 1
+    max_questions: 2
+    prompt: accoglienza.md
+    default_emotion: friendly
+
+  - id: motivazionale
+    name: Domande motivazionali
+    goal: Capire perché il candidato vuole questo ruolo e questa azienda, i suoi obiettivi e i suoi valori.
+    min_questions: 2
+    max_questions: 3
+    prompt: motivazionale.md
+    default_emotion: interested
+
+  - id: tecnica
+    name: Domande tecniche
+    goal: Verificare le competenze richieste dalla posizione partendo da quelle dichiarate nel CV.
+    min_questions: 2
+    max_questions: 4
+    prompt: tecnica.md
+    default_emotion: serious
+
+  - id: approfondimento
+    name: Approfondimenti
+    goal: Tornare sui punti deboli o vaghi emersi nelle fasi precedenti e chiedere esempi concreti.
+    min_questions: 1
+    max_questions: 3
+    prompt: approfondimento.md
+    default_emotion: thoughtful
+
+  - id: chiusura
+    name: Chiusura
+    goal: Chiedere se il candidato ha domande, rispondere in modo generico e congedarlo spiegando i prossimi passi.
+    min_questions: 1
+    max_questions: 2
+    prompt: chiusura.md
+    default_emotion: friendly

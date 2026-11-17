@@ -1,0 +1,29 @@
+id: candidato-vago
+description: >
+  Candidato che risponde in modo generico e senza esempi. Il recruiter deve
+  registrare i punti deboli, approfondirli, e il feedback deve essere basso
+  sugli esempi concreti.
+
+setup:
+  student: studente-esempio
+  position: junior-developer
+  recruiter: hr-generalista
+  difficulty: medio
+
+candidate:
+  mode: simulated
+  persona: |
+    Sei Luca (il CV è quello del colloquio). Sei poco preparato: rispondi in modo breve e generico
+    ("mi piace la tecnologia", "so usare React abbastanza bene", "lavoro bene in gruppo")
+    senza mai fare esempi concreti né spiegare cosa hai fatto tu. Non sai niente dell'azienda.
+    Non sei maleducato, solo vago. Alla fine dici che non hai domande.
+
+max_turns: 22
+
+expect:
+  completes: true
+  all_phases: true
+  max_fallbacks: 0
+  overall_score: { max: 3.0 }
+  criteria:
+    esempi_concreti: { max: 2 }

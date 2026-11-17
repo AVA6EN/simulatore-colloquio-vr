@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Strumento da terminale: chat di prova con il recruiter, valutazioni, anteprima dei prompt. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>harness</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\InterviewHarness.Core\InterviewHarness.Core.csproj" />
+    <ProjectReference Include="..\src\InterviewHarness.Anthropic\InterviewHarness.Anthropic.csproj" />
+  </ItemGroup>
+
+</Project>

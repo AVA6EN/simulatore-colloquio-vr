@@ -1,0 +1,48 @@
+# ===== Segreti (MAI committare chiavi API) =====
+.env
+*.env
+secrets.json
+harness/settings.local.yaml
+
+# ===== .NET / harness C# =====
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+harness/runs/
+
+# ===== Unity (progetto in /unity) =====
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/[Mm]emoryCaptures/
+unity/[Rr]ecordings/
+unity/*.csproj
+unity/*.sln
+unity/*.unityproj
+unity/*.pidb
+unity/*.booproj
+unity/*.svd
+unity/*.pdb
+unity/*.mdb
+unity/*.opendb
+unity/*.VC.db
+unity/*.apk
+unity/*.aab
+unity/*.unitypackage
+unity/crashlytics-build.properties
+unity/Assets/AssetStoreTools*
+
+# ===== Editor / OS =====
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
+desktop.ini

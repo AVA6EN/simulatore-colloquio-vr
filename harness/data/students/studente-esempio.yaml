@@ -1,0 +1,28 @@
+# Profilo di esempio (dati inventati).
+# Nei profili reali la harness oscura email, telefono, codice fiscale e IBAN
+# prima di inviarli al modello (vedi config/guardrails.yaml).
+
+id: studente-esempio
+first_name: Luca
+course: ITS Academy - Web e Mobile Developer
+cv: |
+  Formazione
+  - 2024-2026: ITS Academy Piemonte, corso Web e Mobile Developer (in corso)
+  - 2024: Diploma di perito informatico
+
+  Esperienze
+  - 2025: Stage di 3 mesi presso una piccola web agency di Torino.
+    Ho sviluppato pagine per un e-commerce con React e ho corretto bug nel backend Node.js.
+  - 2023-2024: Cameriere nei weekend in una pizzeria.
+
+  Progetti
+  - Progetto di gruppo ITS: app per prenotare le aule studio (React Native + Firebase).
+    Mi sono occupato del login e della lista delle prenotazioni.
+  - Sito personale con portfolio (HTML, CSS, JavaScript).
+
+  Competenze
+  - JavaScript, TypeScript, React, Node.js, HTML/CSS, Git, basi di SQL
+  - Inglese B1
+
+  Interessi
+  - Videogiochi indie, calcetto, fotografia
