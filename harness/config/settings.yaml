@@ -2,11 +2,18 @@
 # Per override locali (es. modello diverso per prove) crea settings.local.yaml
 # nella stessa cartella: è escluso da git.
 
-model: claude-opus-5-5
+# Fornitore del modello linguistico: gemini | anthropic
+# La chiave si legge da GEMINI_API_KEY (o ANTHROPIC_API_KEY) oppure dal file harness/.env.
+provider: gemini
 
-# Sforzo di ragionamento (low | medium | high | xhigh | max).
+# Modello. Gemini: gemini-3.8-flash (stabile), gemini-4-hydrogen (veloce, nuova generazione),
+# gemini-3.5-flash-lite (il più economico). Anthropic: claude-opus-5-5.
+model: gemini-3.8-flash
+
+# Quanto il modello "ragiona" prima di rispondere (low | medium | high | xhigh).
 # Battute del recruiter: "low" per tenere bassa la latenza durante il dialogo.
 # Feedback finale: più alto, perché deve essere accurato e motivato.
+# Attenzione: gemini-3.8-flash accetta solo low, medium, high.
 turn_effort: low
 feedback_effort: high
 

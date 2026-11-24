@@ -11,7 +11,7 @@ chiusura. Al termine lo studente riceve un feedback scritto basato su criteri es
 
 | Cartella | Responsabili | Contenuto |
 |---|---|---|
-| [`harness/`](harness/README.md) | GEN AI | Harness che governa Claude: fasi, profili recruiter, contesto, controlli, feedback, test |
+| [`harness/`](harness/README.md) | GEN AI | Harness che governa il modello (Google Gemini): fasi, profili recruiter, contesto, controlli, feedback, test |
 | `unity/` | AR/VR | Progetto Unity: avatar, animazioni, lip sync, ambiente, integrazione |
 | [`docs/`](docs/) | tutti | [Formato di scambio](docs/formato-scambio.md) tra harness e Unity, [flusso Git](docs/flusso-git.md) |
 
@@ -21,6 +21,6 @@ testo da pronunciare, l'emozione e il gesto; Unity li trasforma in voce e animaz
 
 ## Requisiti
 
-- **Harness**: .NET 8 SDK, chiave GEMINI
+- **Harness**: .NET 8 SDK, chiave API Gemini (Google AI Studio)
 - **Unity**: versione da definire (team AR/VR)
 - **Git LFS** per gli asset 3D, le texture e l'audio (`git lfs install` una volta sola)

@@ -39,8 +39,9 @@ namespace InterviewHarness.Llm
 
     /// <summary>
     /// Astrazione della chiamata al modello. La harness dipende solo da questa interfaccia:
-    /// - InterviewHarness.Anthropic la implementa con l'SDK ufficiale (CLI, test di valutazione);
-    /// - in Unity si può implementare con UnityWebRequest;
+    /// - GeminiLlmClient (in questa libreria) chiama Google Gemini via HTTP: è quello usato di default,
+    ///   anche in Unity;
+    /// - InterviewHarness.Anthropic la implementa con l'SDK ufficiale di Claude (alternativa);
     /// - nei test unitari si usa un client finto con risposte predefinite.
     /// </summary>
     public interface ILlmClient

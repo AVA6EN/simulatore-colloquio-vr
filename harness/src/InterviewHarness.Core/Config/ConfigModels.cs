@@ -5,7 +5,9 @@ namespace InterviewHarness.Config
     /// <summary>harness/config/settings.yaml</summary>
     public class Settings
     {
-        public string Model { get; set; } = "claude-opus-5-5";
+        /// <summary>gemini | anthropic</summary>
+        public string Provider { get; set; } = "gemini";
+        public string Model { get; set; } = "gemini-3.8-flash";
         public string TurnEffort { get; set; } = "low";
         public string FeedbackEffort { get; set; } = "high";
         public int TurnMaxTokens { get; set; } = 2000;
