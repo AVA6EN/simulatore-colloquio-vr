@@ -1,8 +1,7 @@
 # Harness del recruiter (GEN AI)
 
 La harness è lo strato che governa il modello linguistico durante il colloquio.
-Il modello usato è **Google Gemini**; il fornitore si cambia in `config/settings.yaml`
-(è disponibile anche Claude di Anthropic).
+Il modello usato è **Google Gemini** (modello e parametri in `config/settings.yaml`).
 Sostituisce il singolo system prompt statico con componenti separati, versionati e testati.
 
 ```
@@ -26,7 +25,7 @@ Formato dei messaggi con Unity: [`docs/formato-scambio.md`](../docs/formato-scam
 
 | Percorso | Contenuto |
 |---|---|
-| `config/settings.yaml` | Fornitore e modello, effort, limiti di token, tentativi di rigenerazione |
+| `config/settings.yaml` | Modello Gemini, effort, limiti di token, tentativi di rigenerazione |
 | `config/phases.yaml` | Le 5 fasi del colloquio con obiettivo e numero di domande |
 | `config/recruiters.yaml` | Profili di recruiter per settore e livelli di difficoltà |
 | `config/evaluation.yaml` | Griglia di valutazione del feedback (criteri, pesi, descrittori) |
@@ -36,7 +35,6 @@ Formato dei messaggi con Unity: [`docs/formato-scambio.md`](../docs/formato-scam
 | `prompts/feedback.md` | Template del prompt per il feedback finale |
 | `data/students/`, `data/positions/` | Profili studente (CV) e posizioni di esempio |
 | `src/InterviewHarness.Core` | Libreria C# della harness (netstandard2.1, usabile in Unity), incluso il client Gemini |
-| `src/InterviewHarness.Anthropic` | Client alternativo per Claude, tramite l'SDK ufficiale Anthropic |
 | `cli/` | Strumento da terminale: chat di prova, valutazioni, anteprima prompt |
 | `tests/` | Test unitari (modello finto, gratuiti) |
 | `evals/` | Casi di valutazione con il modello vero |
