@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{11E1150E-B03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewHarness.Core", "src\InterviewHarness.Core\InterviewHarness.Core.csproj", "{E9F1E1A3-6A7F-4BD6-9C9E-07200D67F952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewHarness.Anthropic", "src\InterviewHarness.Anthropic\InterviewHarness.Anthropic.csproj", "{2F991FDC-EC1C-45A7-A607-0288F67B1E5D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewHarness.Cli", "cli\InterviewHarness.Cli.csproj", "{D183E998-ACEF-4E9A-A462-412218E8F19E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{73D4DD02-D54C-404E-8FE5-7AF12328D366}"
@@ -28,10 +26,6 @@ Global
 		{E9F1E1A3-6A7F-4BD6-9C9E-07200D67F952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9F1E1A3-6A7F-4BD6-9C9E-07200D67F952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9F1E1A3-6A7F-4BD6-9C9E-07200D67F952}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F991FDC-EC1C-45A7-A607-0288F67B1E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F991FDC-EC1C-45A7-A607-0288F67B1E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F991FDC-EC1C-45A7-A607-0288F67B1E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F991FDC-EC1C-45A7-A607-0288F67B1E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D183E998-ACEF-4E9A-A462-412218E8F19E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D183E998-ACEF-4E9A-A462-412218E8F19E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D183E998-ACEF-4E9A-A462-412218E8F19E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,7 +37,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E9F1E1A3-6A7F-4BD6-9C9E-07200D67F952} = {11E1150E-B039-41AA-ADA7-8DFBFE5995B9}
-		{2F991FDC-EC1C-45A7-A607-0288F67B1E5D} = {11E1150E-B039-41AA-ADA7-8DFBFE5995B9}
 		{E7F99EC1-7F60-40E2-B31D-887C139478F8} = {73D4DD02-D54C-404E-8FE5-7AF12328D366}
 	EndGlobalSection
 EndGlobal

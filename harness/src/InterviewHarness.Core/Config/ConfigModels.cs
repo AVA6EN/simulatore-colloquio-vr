@@ -5,8 +5,7 @@ namespace InterviewHarness.Config
     /// <summary>harness/config/settings.yaml</summary>
     public class Settings
     {
-        /// <summary>gemini | anthropic</summary>
-        public string Provider { get; set; } = "gemini";
+        /// <summary>Modello Google Gemini, es. gemini-3.8-flash.</summary>
         public string Model { get; set; } = "gemini-3.8-flash";
         public string TurnEffort { get; set; } = "low";
         public string FeedbackEffort { get; set; } = "high";

@@ -2,12 +2,11 @@
 # Per override locali (es. modello diverso per prove) crea settings.local.yaml
 # nella stessa cartella: è escluso da git.
 
-# Fornitore del modello linguistico: gemini | anthropic
-# La chiave si legge da GEMINI_API_KEY (o ANTHROPIC_API_KEY) oppure dal file harness/.env.
-provider: gemini
+# Modello linguistico: Google Gemini.
+# La chiave si legge da GEMINI_API_KEY oppure dal file harness/.env (escluso da git).
 
-# Modello. Gemini: gemini-3.8-flash (stabile), gemini-4-hydrogen (veloce, nuova generazione),
-# gemini-3.5-flash-lite (il più economico). Anthropic: claude-opus-5-5.
+# Modello: gemini-3.8-flash (stabile), gemini-4-hydrogen (veloce, nuova generazione),
+# gemini-3.5-flash-lite (il più economico).
 model: gemini-3.8-flash
 
 # Quanto il modello "ragiona" prima di rispondere (low | medium | high | xhigh).

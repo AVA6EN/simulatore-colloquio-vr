@@ -17,7 +17,6 @@ public class ConfigTests
     public void Settings_UsaGeminiConValoriValidi()
     {
         var s = TestData.Config.Settings;
-        Assert.Equal("gemini", s.Provider);
         Assert.StartsWith("gemini-", s.Model);
         Assert.Equal("LOW", Llm.GeminiLlmClient.ThinkingLevel(s.TurnEffort));
         Assert.True(s.MaxGuardRetries >= 1);

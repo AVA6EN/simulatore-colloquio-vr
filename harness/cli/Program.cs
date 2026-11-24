@@ -1,7 +1,6 @@
 using System.Globalization;
 using System.Text;
 using InterviewHarness;
-using InterviewHarness.AnthropicClient;
 using InterviewHarness.Config;
 using InterviewHarness.Evaluation;
 using InterviewHarness.Exchange;
@@ -54,9 +53,8 @@ static class Commands
               --json              (chat) mostra anche i messaggi JSON inviati a Unity
               --phase <id>        (prompt) fase da mostrare, default: la prima
 
-            Il fornitore si sceglie in harness/config/settings.yaml (provider: gemini | anthropic).
-            La chiave API si legge da GEMINI_API_KEY (o ANTHROPIC_API_KEY) oppure dal file
-            harness/.env, escluso da git.
+            Il modello è Google Gemini (harness/config/settings.yaml).
+            La chiave API si legge da GEMINI_API_KEY oppure dal file harness/.env, escluso da git.
             """);
         return 0;
     }
@@ -150,13 +148,7 @@ static class Commands
 
     private static InterviewHarness.Llm.ILlmClient CreateClient(HarnessConfig config)
     {
-        string provider = config.Settings.Provider.ToLowerInvariant();
-        string variable = provider switch
-        {
-            "gemini" => "GEMINI_API_KEY",
-            "anthropic" => "ANTHROPIC_API_KEY",
-            _ => throw new HarnessException($"Provider '{config.Settings.Provider}' non supportato (usa gemini o anthropic)."),
-        };
+        const string variable = "GEMINI_API_KEY";
 
         string? key = Environment.GetEnvironmentVariable(variable);
         if (string.IsNullOrEmpty(key))
@@ -172,9 +164,7 @@ static class Commands
         if (string.IsNullOrEmpty(key))
             throw new HarnessException($"Chiave API mancante: imposta {variable} oppure crea harness/.env con la riga {variable}=...");
 
-        return provider == "gemini"
-            ? new InterviewHarness.Llm.GeminiLlmClient(key)
-            : new AnthropicLlmClient(key);
+        return new InterviewHarness.Llm.GeminiLlmClient(key);
     }
 
     private static void PrintTurn(RecruiterTurn turn, InterviewSession session, bool json)
@@ -211,7 +201,7 @@ static class Commands
         var sb = new StringBuilder();
         sb.AppendLine($"# Valutazione harness — {DateTime.Now:yyyy-MM-dd HH:mm}");
         sb.AppendLine();
-        sb.AppendLine($"Fornitore: `{config.Settings.Provider}` · modello: `{config.Settings.Model}` · effort battute: `{config.Settings.TurnEffort}` · effort feedback: `{config.Settings.FeedbackEffort}`");
+        sb.AppendLine($"Modello Gemini: `{config.Settings.Model}` · effort battute: `{config.Settings.TurnEffort}` · effort feedback: `{config.Settings.FeedbackEffort}`");
         sb.AppendLine();
         sb.AppendLine("| Caso | Esito | Check superati | Battute | Voto | Token in/out |");
         sb.AppendLine("|---|---|---|---|---|---|");
