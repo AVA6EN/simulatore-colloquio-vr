@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- Implementazione di ILlmClient con l'SDK ufficiale Anthropic (usata da CLI e valutazioni). -->
+  <!-- Implementazione alternativa di ILlmClient per Claude, con l'SDK ufficiale Anthropic (provider: anthropic). -->
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>

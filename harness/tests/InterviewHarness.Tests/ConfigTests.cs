@@ -14,6 +14,17 @@ public class ConfigTests
     }
 
     [Fact]
+    public void Settings_UsaGeminiConValoriValidi()
+    {
+        var s = TestData.Config.Settings;
+        Assert.Equal("gemini", s.Provider);
+        Assert.StartsWith("gemini-", s.Model);
+        Assert.Equal("LOW", Llm.GeminiLlmClient.ThinkingLevel(s.TurnEffort));
+        Assert.True(s.MaxGuardRetries >= 1);
+        Assert.True(s.TurnMaxTokens > 0 && s.FeedbackMaxTokens > s.TurnMaxTokens);
+    }
+
+    [Fact]
     public void Fasi_HannoLimitiValidi()
     {
         foreach (var p in TestData.Config.Phases)

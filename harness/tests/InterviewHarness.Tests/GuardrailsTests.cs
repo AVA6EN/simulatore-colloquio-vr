@@ -33,6 +33,7 @@ public class GuardrailsTests
     [Theory]
     [InlineData("Come intelligenza artificiale non posso valutarti.")]
     [InlineData("Sono Claude, un assistente creato da Anthropic.")]
+    [InlineData("Sono Gemini, un modello creato da Google.")]
     public void UscitaDalRuolo_Bloccata(string speech)
     {
         Assert.Contains("role_break", Codes(speech));

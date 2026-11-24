@@ -8,7 +8,7 @@ Questo documento è il **contratto** tra le due metà del progetto:
 
 ```
  Studente (voce/testo)            Harness (GEN AI)                     Unity (AR/VR)
- ───────────────────▶  CandidateTurn  ──▶  Claude + regole  ──▶  RecruiterTurn  ──▶  avatar parla, si muove
+ ───────────────────▶  CandidateTurn  ──▶  Gemini + regole  ──▶  RecruiterTurn  ──▶  avatar parla, si muove
                                                               └─▶ InterviewEnd   ──▶  schermata feedback
 ```
 
@@ -151,7 +151,7 @@ Questi stati non arrivano dalla harness: li decide Unity in base al flusso.
 |---|---|
 | `idle` | Nessuno parla |
 | `listening` | Lo studente sta parlando (cenni leggeri, sguardo sullo studente) |
-| `waiting` | In attesa della risposta di Claude (es. `take_notes` o `thoughtful` in loop) |
+| `waiting` | In attesa della risposta del modello (es. `take_notes` o `thoughtful` in loop) |
 | `speaking` | Durante il TTS del campo `speech` |
 
 ---
@@ -160,6 +160,6 @@ Questi stati non arrivano dalla harness: li decide Unity in base al flusso.
 
 - [ ] **Voce (TTS)**: quale servizio sintetizza `speech`? Da chi è gestito (Unity)?
 - [ ] **Riconoscimento vocale (STT)** dello studente o solo input da tastiera?
-- [ ] **Tempi**: la risposta di Claude impiega qualche secondo — l'avatar usa lo stato `waiting`.
+- [ ] **Tempi**: la risposta del modello (Gemini) impiega qualche secondo — l'avatar usa lo stato `waiting`.
 - [ ] **Come la libreria C# della harness entra in Unity** (DLL in `Assets/Plugins` o sorgenti).
 - [ ] Servono altre emozioni/gesti? Aggiungerli qui **prima** di usarli.
